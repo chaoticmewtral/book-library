@@ -1,11 +1,37 @@
+:root {
+    /* hues */
+    --bookshelf: 38;
+}
+
 * {
     font-family: "Syne Mono", 'Courier New', Courier, monospace;
+    margin: 0 auto;
+}
+
+body {
+    max-width: 900px;
 }
 
 form {
     display: grid;
+    background: url('./images/card.jpg') no-repeat;
+    background-size: cover;
+    width: 450px;
+    height: auto;
+    padding: 2em;
 }
 
-#shelf {
-    display: grid;
+form input {
+    background: transparent;
+    border: transparent;
 }
+
+form input:active {
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: 1px solid black;
+}
+
+
+
