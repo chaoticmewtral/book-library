@@ -8,6 +8,6 @@ function Book(title, author, genre, length, read) {
     this.read = read;
 }
 
-function addBookToLibrary() {
+function addBook() {
 
 }
