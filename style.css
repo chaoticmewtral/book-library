@@ -1,0 +1,7 @@
+* {
+    font-family: "Syne Mono", 'Courier New', Courier, monospace;
+}
+
+form {
+    display: grid;
+}
