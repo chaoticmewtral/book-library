@@ -94,3 +94,18 @@ input:focus-visible {
     border-bottom: 1px solid black;
     outline: 2px ridge rgba(255, 255, 255, 0.352);
 }
+
+#bookshelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 50px);
+    width: 100%;
+    gap: 2px;
+}
+
+.book {
+    display: grid;
+    width: 50px;
+    height: 220px;
+    background: blue;
+    border-radius: 3px;
+}

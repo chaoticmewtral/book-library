@@ -25,9 +25,31 @@ function addBook(e) {
     myLibrary.push(newBook);
     console.log(myLibrary);
     document.querySelector('form').reset();
+    document.querySelector('#title').focus();
+    toBookshelf();
 }
 
 function toBookshelf() {
     const shelf = document.querySelector('#bookshelf');
-    const displayBook = document.createElement('p');
+    const book = document.createElement('div');
+    const title = document.createElement('p');
+    const author = document.createElement('p');
+    const pages = document.createElement('p');
+
+    for (let Book of myLibrary) {
+        title.textContent = Book.title;
+        author.textContent = Book.author;
+        pages.textContent = Book.pages;
+
+        book.appendChild(title);
+        book.appendChild(author);
+        book.appendChild(pages);
+
+        if (Book.read) {
+            book.className = "has-read book";
+        } else {
+            book.className = "not-read book";
+        }
+        shelf.appendChild(book);
+    }
 }
