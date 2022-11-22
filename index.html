@@ -27,11 +27,12 @@
         </div>
         <div class="length">
             <label for="length">Length: </label>
-            <input type="number" name="length" id="length" min="0">
+            <input type="text" name="length" id="length" pattern="[0-9]{0,5}" size="4">
+            <p>pages</p>
         </div>
         <div class="read">
-            <label for="read">I have read this</label>
             <input type="checkbox" name="read" id="read">
+            <label for="read">I have read this</label>       
         </div>
         <button id="submit">Add</button>
     </form>
