@@ -10,12 +10,20 @@
 
 body {
     max-width: 900px;
+    display: grid;
+    justify-content: center;
+}
+
+#new-book {
+    margin: 10px auto;
 }
 
 form {
     display: grid;
     background: url('./images/card.jpg') no-repeat;
     background-size: cover;
+    min-width: 330px;
+    gap: .5em;
     max-width: 450px;
     height: auto;
     padding: 2em;

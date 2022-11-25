@@ -3,6 +3,7 @@ let myLibrary = [];
 const submitBook = document.querySelector('#submit');
 
 submitBook.addEventListener('click', addBook);
+window.onload = toBookshelf();
 
 function Book(title, author, genre, pages, read) {
     this.title = title;
@@ -11,6 +12,10 @@ function Book(title, author, genre, pages, read) {
     this.pages = pages;
     this.read = read;
 }
+
+const theGiver = new Book('The Giver', 'Lois Lowry', 'sci-fi', 180, true);
+
+myLibrary.push(theGiver);
 
 function addBook(e) {
     e.preventDefault();
