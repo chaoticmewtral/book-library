@@ -2,16 +2,23 @@ let myLibrary = [];
 
 const button = document.querySelector("#new-book");
 const submitBook = document.querySelector('#submit');
+const closeButton = document.querySelector('.close');
 
 button.addEventListener('click', showForm);
-
 submitBook.addEventListener('click', addBook);
 window.onload = toBookshelf();
+closeButton.addEventListener('click', closeForm);
 
 function showForm() {
-    const form = querySelector('form');
+    const form = document.querySelector('form');
 
     form.style.visibility = 'visible';
+}
+
+function closeForm() {
+    const form = document.querySelector('form');
+
+    form.style.visibility = 'hidden';
 }
 
 function Book(title, author, genre, pages, read) {
@@ -45,25 +52,25 @@ function addBook(e) {
 
 function toBookshelf() {
     const shelf = document.querySelector('#bookshelf');
-    const book = document.createElement('div');
+    const bookDisplay = document.createElement('div');
     const title = document.createElement('p');
     const author = document.createElement('p');
     const pages = document.createElement('p');
 
-    for (let Book of myLibrary) {
-        title.textContent = Book.title;
-        author.textContent = Book.author;
-        pages.textContent = Book.pages;
+    for (let book of myLibrary) {
+        title.textContent = book.title;
+        author.textContent = book.author;
+        pages.textContent = book.pages;
 
-        book.appendChild(title);
-        book.appendChild(author);
-        book.appendChild(pages);
+        bookDisplay.appendChild(title);
+        bookDisplay.appendChild(author);
+        bookDisplay.appendChild(pages);
 
-        if (Book.read) {
-            book.className = "has-read book";
+        if (book.read) {
+            bookDisplay.className = "has-read book";
         } else {
-            book.className = "not-read book";
+            bookDisplay.className = "not-read book";
         }
-        shelf.appendChild(book);
+        shelf.appendChild(bookDisplay);
     }
 }
