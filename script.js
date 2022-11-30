@@ -1,9 +1,18 @@
 let myLibrary = [];
 
+const button = document.querySelector("#new-book");
 const submitBook = document.querySelector('#submit');
+
+button.addEventListener('click', showForm);
 
 submitBook.addEventListener('click', addBook);
 window.onload = toBookshelf();
+
+function showForm() {
+    const form = querySelector('form');
+
+    form.style.visibility = 'visible';
+}
 
 function Book(title, author, genre, pages, read) {
     this.title = title;
